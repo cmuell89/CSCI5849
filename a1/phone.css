@@ -1,8 +1,63 @@
-/* make all buttons 20 by 20 pixels with white text and green background and a 10 pixel margin */
-button { width: 20px; height: 80px; background: gray; color: white; margin: 10px; }
+/**
+ * Tabs
+ */
+.tabsBar {
+	display: flex;
+	flex-wrap: wrap; // make sure it wraps
+}
+.tabsBar label {
+	order: 1; // Put the labels first
+	display: block;
+	padding: 1rem 2rem;
+	margin-right: 0.2rem;
+	cursor: pointer;
+  background: #90CAF9;
+  font-weight: bold;
+  transition: background ease 0.2s;
+}
+.tabsBar .tab {
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding: 1rem;
+  background: #fff;
+}
+.tabsBar input[type="radio"] {
+	display: none;
+}
+.tabsBar input[type="radio"]:checked + label {
+	background: #fff;
+}
+.tabsBar input[type="radio"]:checked + label + .tab {
+	display: block;
+}
 
-/* make all tags with the "cool" class name have blue text */
-.tabButton { color: gray; }
+@media (max-width: 45em) {
+  .tabsBar .tab,
+  .tabsBar label {
+    order: initial;
+  }
+  .tabsBar label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
 
-/* make the button with ID "delete" red */
-#delete { background: red; }
+/**
+ * Generic Styling
+*/
+body {
+  background: #eee;
+  min-height: 100vh;
+	box-sizing: border-box;
+	padding-top: 10vh;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 60rem;
+  margin: 0 auto;
+  font-size: 112%;
+}
+
