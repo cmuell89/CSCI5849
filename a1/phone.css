@@ -1,6 +1,3 @@
-/**
- * Tabs
- */
 .tabsBar {
 	display: flex;
 	flex-wrap: wrap; // make sure it wraps
