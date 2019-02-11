@@ -1,79 +1,91 @@
-<!-- https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press -->
-
-
 <html>
-  <head>
-    <title>Assignment One</title>
-    <link rel="stylesheet" href="phone.css">
-  </head>
-  <body>
-    <div class="tabsBar">
-      <input type="radio" name="tabBar" id="tab1" checked="checked">
-        <label for="tab1">Dialer</label>
-        <div class="tab">
-          <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-          <div class="container">
-            <div id="output"></div>
-            <div class="row">
-              <div class="digit" id="one">1</div>
-              <div class="digit" id="two">2
-                <div class="sub">abc</div>
-              </div>
-              <div class="digit" id="three">3
-                <div class="sub">def</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="digit" id="four">4
-                <div class="sub">ghi</div>
-              </div>
-              <div class="digit" id="five">5
-                <div class="sub">jkl</div>
-              </div>
-              <div class="digit">6
-                <div class="sub">mno</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="digit">7
-                <div class="sub">pqrs</div>
-              </div>
-              <div class="digit">8
-                <div class="sub">tuv</div>
-              </div>
-              <div class="digit">9
-                <div class="sub">wxyz</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="digit">*
-              </div>
-              <div class="digit">0
-              </div>
-              <div class="digit">#
-              </div>
-            </div>
-            <div class="botrow"><i class="fa fa-star-o dig" aria-hidden="true"></i>
-              <div id="call"><i class="fa fa-phone" aria-hidden="true"></i></div>
-              <i class="fa fa-long-arrow-left dig" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      <input type="radio" name="tabBar" id="tab2">
-        <label for="tab2">Contacts</label>
-        <div tabindex=0 class="tab">
-          <h1>Contacts</h1>
-        </div>
-      
-      <input type="radio" name="tabBar" id="tab3">
-        <label for="tab3">Add Contact</label>
-        <div tabindex=0   class="tab">
-          <h1>Add Contact</h1>
-        </div>
-  </div>
+	<head>
+		<title>Assignment One</title>
+		<link rel="stylesheet" href="a3.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="a3.js"></script>
+		<script src="notify.min.js"></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="tabLinks">
+				<li class="active"><a href="#dialer">Dialer</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				<li><a href="#addContact">Add Contact</a></li>
+				<li><a href="#help">Help</a></li>
+			</ul>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="phone.js"></script>
-  </body>
+			<div class="tabContent">
+				<div id="dialer" class="tab active">
+					<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+					<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+					<div class="container">
+						<div id="output"></div>
+						<div class="row">
+							<div class="digit" id="one" tabindex="0">1</div>
+							<div class="digit" id="two" tabindex="0">2
+								<div class="sub">abc</div>
+							</div>
+							<div class="digit" id="three" tabindex="0">3
+								<div class="sub">def</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="digit" id="four" tabindex="0">4
+								<div class="sub">ghi</div>
+							</div>
+							<div class="digit" id="five" tabindex="0">5
+								<div class="sub">jkl</div>
+							</div>
+							<div class="digit" id="six" tabindex="0">6
+								<div class="sub">mno</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="digit" id="seven" tabindex="0">7
+								<div class="sub">pqrs</div>
+							</div>
+							<div class="digit" id="eight" tabindex="0">8
+								<div class="sub">tuv</div>
+							</div>
+							<div class="digit" id="nine" tabindex="0">9
+								<div class="sub">wxyz</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="digit" id="star" tabindex="0">*
+							</div>
+							<div class="digit" id="zero" tabindex="0">0
+							</div>
+							<div class="digit" id="pound" tabindex="0">#
+							</div>
+						</div>
+						<div class="botrow">
+							<i class="fa fa-star-o dig" aria-hidden="true" tabindex="0"></i>
+							<div id="call" tabindex="0"><i class="fa fa-phone" aria-hidden="true"></i></div>
+							<i class="fa fa-long-arrow-left dig" aria-hidden="true" tabindex="0"></i>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="contacts" class="tab">
+					<p>Need Contacts Table</p>
+					<p></p>
+				</div>
+
+				<div id="addContact" class="tab">
+					<p>Need a way to add contacts.</p>
+					<p></p>
+				</div>
+
+				<div id="help" class="tab">
+					<p>Need a way to help.</p>
+					<p></p>
+				</div>
+
+			</div>
+		</div>
+	</body>
 </html>
+

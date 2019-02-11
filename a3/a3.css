@@ -1,0 +1,162 @@
+/**
+ * Generic Styling
+*/
+body {
+	background: #eee;
+	min-height: 100vh;
+	box-sizing: border-box;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	line-height: 1.5;
+	max-width: 60rem;
+	margin: 0 auto;
+	font-size: 112%;
+}
+
+.notifyjs-arrow {
+    z-index:99999;
+}
+
+/*----- Tabs -----*/
+.tabs {
+	width:100%;
+	display:inline-block;
+}
+
+/*----- Tab Links -----*/
+
+.tabLinks {
+	display: flex;
+	flex-wrap: wrap; // make sure it wraps
+	border-radius:3px;
+	padding: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.tabLinks:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.tabLinks li {
+	margin:0px 5px;
+	float:left;
+	list-style:none;
+	padding-top: 3px;
+}
+
+.tabLinks a {
+	padding:9px 15px;
+	display:inline-block;
+	background:#7FB5DA;
+	font-size:16px;
+	font-weight:600;
+	color:#4c4c4c;
+	transition:all linear 0.15s;
+}
+
+.tabLinks a:hover {
+	background:#a7cce5;
+	text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+	background:#fff;
+	color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tabContent {
+	padding:15px;
+	border-radius:3px;
+	box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+	background:#fff;
+}
+
+.tab {
+	display: none;
+}
+
+.tab.active {
+	display:block;
+}
+
+.row {
+	margin: 0 auto;
+	width: 280px;
+	clear: both;
+	text-align: center;
+	font-family: 'Exo';
+}
+
+.digit,
+.dig {
+	float: left;
+	padding: 10px 30px;
+	width: 30px;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.sub {
+	font-size: 0.8rem;
+	color: grey;
+}
+
+.container {
+	background-color: white;
+	width: 320px;
+	padding: 20px;
+	margin: 30px auto;
+	height: 420px;
+	text-align: center;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#output {
+	font-family: "Exo";
+	font-size: 2rem;
+	height: 60px;
+	font-weight: bold;
+	color: #1976d2;
+}
+
+#call {
+	display: inline-block;
+	background-color: #66bb6a;
+	padding: 4px 30px;
+	margin: 10px;
+	color: white;
+	border-radius: 4px;
+	float: left;
+	cursor: pointer;
+}
+
+.botrow {
+	margin: 0 auto;
+	width: 280px;
+	clear: both;
+	text-align: center;
+	font-family: 'Exo';
+}
+
+.digit:active,
+.dig:active {
+	background-color: #e6e6e6;
+}
+
+#call:hover {
+ 	background-color: #81c784;
+}
+
+.dig {
+	float: left;
+	padding: 10px 20px;
+	margin: 10px;
+	width: 30px;
+	cursor: pointer;
+}
+
+
