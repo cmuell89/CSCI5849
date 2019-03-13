@@ -91,20 +91,75 @@ function clickSelectedItem() {
 
 // this function responds to user key presses
 // you'll rewrite this to control your interface using some number of keys
-$(document).keydown(function(event) {
-	console.log(event.key)
-	if (event.key == "ArrowRight") {
-		selectNext();
-	} else if (event.key == "ArrowLeft") {
-		selectPrevious();
-	} else if (event.key == "ArrowUp") {
-		selectUp();
-	} else if (event.key == "ArrowDown") {
-		selectDown();
-	} else if (event.key == "Enter") {
-		clickSelectedItem();
+
+
+
+$(document).ready(function(event) {
+	var mode = 'arrow';
+	var forward = true;
+	var counter = 1000;
+	var timeouts = [];
+	timeouts.push(setTimeout(function(){alert(1);}, 200));
+	timeouts.push(setTimeout(function(){alert(2);}, 300));
+	timeouts.push(setTimeout(function(){alert(3);}, 400));
+
+	for (var i=0; i<timeouts.length; i++) {
+	  clearTimeout(timeouts[i]);
 	}
+	$(document).keydown(function(event) {
+		if (event.key == "m") {
+			if (mode == 'arrow') {
+				mode = 'strafe';
+				alert("Strafing Mode Active!")
+				var selectSpeed = function() {
+				    if (forward) {
+				 		selectNext();
+				 	} else {
+				    	selectPrevious();
+				 	}  
+				    timeouts.push(setTimeout(selectSpeed, counter));
+				}
+				timeouts.push(setTimeout(selectSpeed, counter));
+			} else {
+				mode = 'arrow';
+				alert("Arrow Mode Active!");
+				for (var i=0; i<timeouts.length; i++) {
+				  clearTimeout(timeouts[i]);
+				}
+			}
+		}
+		if (mode == 'arrow') {
+			if (event.key == "ArrowRight") {
+				selectNext();
+			} else if (event.key == "ArrowLeft") {
+				selectPrevious();
+			} else if (event.key == "ArrowUp") {
+				selectUp();
+			} else if (event.key == "ArrowDown") {
+				selectDown();
+			} else if (event.key == "Enter") {
+				clickSelectedItem();
+			}
+		} else if (mode == 'strafe') {
+			if (event.key == "Enter") {
+				clickSelectedItem();
+			}
+			if (event.key == 'Shift'){
+				forward = !forward;
+			}
+			if (event.keyCode == 17){
+				if (counter == 1000) {
+					counter = 300
+				} else {
+					counter = 1000
+				}
+			}
+		}
+	})
+	
 })
+
+
 
 
 /* calculator stuff below here */
