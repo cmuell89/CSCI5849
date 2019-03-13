@@ -91,11 +91,18 @@ function clickSelectedItem() {
 
 // this function responds to user key presses
 // you'll rewrite this to control your interface using some number of keys
-$(document).keypress(function(event) {
-	if (event.key == "a") {
-		alert("You pressed the 'a' key!")	
-	} else if (event.key == "b") {
-		alert("You pressed the 'b' key!")
+$(document).keydown(function(event) {
+	console.log(event.key)
+	if (event.key == "ArrowRight") {
+		selectNext();
+	} else if (event.key == "ArrowLeft") {
+		selectPrevious();
+	} else if (event.key == "ArrowUp") {
+		selectUp();
+	} else if (event.key == "ArrowDown") {
+		selectDown();
+	} else if (event.key == "Enter") {
+		clickSelectedItem();
 	}
 })
 
