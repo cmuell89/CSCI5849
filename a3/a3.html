@@ -1,91 +1,197 @@
-<html>
-	<head>
-		<title>Assignment One</title>
-		<link rel="stylesheet" href="a3.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="a3.js"></script>
-		<script src="notify.min.js"></script>
-	</head>
-	<body>
-		<div class="tabs">
-			<ul class="tabLinks">
-				<li class="active"><a href="#dialer">Dialer</a></li>
-				<li><a href="#contacts">Contacts</a></li>
-				<li><a href="#addContact">Add Contact</a></li>
-				<li><a href="#help">Help</a></li>
-			</ul>
+<html lang="en">
+    <head>
+        <title>Assignment One</title>
+        <link rel="stylesheet" href="a3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="a3.js"></script>
+        <script src="notify.min.js"></script>
+    </head>
+    <main role="main">
+        <body>
+            <div class="tabs" aria-live="assertive">
+                <nav role="navigation">
+                    <ul class="tabLinks">
+                        <li class="active"><a href="#dialer">Dialer</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#addContact">Add Contact</a></li>
+                        <li><a href="#help">Help</a></li>
+                    </ul>
+                </nav>
 
-			<div class="tabContent">
-				<div id="dialer" class="tab active">
-					<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-					<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-					<div class="container">
-						<div id="output"></div>
-						<div class="row">
-							<div class="digit" id="one" tabindex="0">1</div>
-							<div class="digit" id="two" tabindex="0">2
-								<div class="sub">abc</div>
-							</div>
-							<div class="digit" id="three" tabindex="0">3
-								<div class="sub">def</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="digit" id="four" tabindex="0">4
-								<div class="sub">ghi</div>
-							</div>
-							<div class="digit" id="five" tabindex="0">5
-								<div class="sub">jkl</div>
-							</div>
-							<div class="digit" id="six" tabindex="0">6
-								<div class="sub">mno</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="digit" id="seven" tabindex="0">7
-								<div class="sub">pqrs</div>
-							</div>
-							<div class="digit" id="eight" tabindex="0">8
-								<div class="sub">tuv</div>
-							</div>
-							<div class="digit" id="nine" tabindex="0">9
-								<div class="sub">wxyz</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="digit" id="star" tabindex="0">*
-							</div>
-							<div class="digit" id="zero" tabindex="0">0
-							</div>
-							<div class="digit" id="pound" tabindex="0">#
-							</div>
-						</div>
-						<div class="botrow">
-							<i class="fa fa-star-o dig" aria-hidden="true" tabindex="0"></i>
-							<div id="call" tabindex="0"><i class="fa fa-phone" aria-hidden="true"></i></div>
-							<i class="fa fa-long-arrow-left dig" aria-hidden="true" tabindex="0"></i>
-						</div>
-					</div>
+                <div class="tabContent" role="content">
+                    <div id="dialer" class="tab active">
+                        <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+                        <div class="container">
+                            <div id="output"></div>
+                            <div class="row">
+                                <div class="digit" id="one" tabindex="0">1</div>
+                                <div class="digit" id="two" tabindex="0">2
+                                    <div class="sub">abc</div>
+                                </div>
+                                <div class="digit" id="three" tabindex="0">3
+                                    <div class="sub">def</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="digit" id="four" tabindex="0">4
+                                    <div class="sub">ghi</div>
+                                </div>
+                                <div class="digit" id="five" tabindex="0">5
+                                    <div class="sub">jkl</div>
+                                </div>
+                                <div class="digit" id="six" tabindex="0">6
+                                    <div class="sub">mno</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="digit" id="seven" tabindex="0">7
+                                    <div class="sub">pqrs</div>
+                                </div>
+                                <div class="digit" id="eight" tabindex="0">8
+                                    <div class="sub">tuv</div>
+                                </div>
+                                <div class="digit" id="nine" tabindex="0">9
+                                    <div class="sub">wxyz</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="digit" id="star" tabindex="0">*
+                                </div>
+                                <div class="digit" id="zero" tabindex="0">0
+                                </div>
+                                <div class="digit" id="pound" tabindex="0">#
+                                </div>
+                            </div>
+                            <div class="botrow">
+                                <i class="fa fa-star-o dig" aria-hidden="true" tabindex="0"></i>
+                                <div id="call" tabindex="0"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                <i class="fa fa-long-arrow-left dig" aria-hidden="true" tabindex="0"></i>
+                            </div>
+                        </div>
 
-				</div>
+                    </div>
 
-				<div id="contacts" class="tab">
-					<p>Need Contacts Table</p>
-					<p></p>
-				</div>
+                    <div id="contacts" class="tab">
+                    <table id="contacts_table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Number  </th>
+                        </tr>
+                        <tr>
+                            <td>Rigantona Sultan</td>
+                            <td><a href="tel:+1-771-973-1194">+1 (771) 973-1194</a></td>
+                        </tr>
+                        <tr>
+                            <td>Octávia Cyprien</td>
+                            <td><a href="tel:+1-502-936-2080">+1 (502) 936-2080</a></td>
+                        </tr>
+                        <tr>
+                            <td>Oriana Aleks</td>
+                            <td><a href="tel:+1-310-503-3357">+1 (310) 503-3357</a></td>
+                        </tr>
+                        <tr>
+                            <td>Gusztáv Aurora</td>
+                            <td><a href="tel:+1-723-342-3991">+1 (723) 342-3991</a></td>
+                        </tr>
+                        <tr>
+                            <td>Raja Silva</td>
+                            <td><a href="tel:+1-852-702-5716">+1 (852) 702-5716</a></td>
+                        </tr>
+                        <tr>
+                            <td>Apolinary Gus</td>
+                            <td><a href="tel:+1-809-862-5342">+1 (809) 862-5342</a></td>
+                        </tr>
+                        <tr>
+                            <td>Anna Apollonia</td>
+                            <td><a href="tel:+1-924-938-2554">+1 (924) 938-2554</a></td>
+                        </tr>
+                        <tr>
+                            <td>Varinius Haruto</td>
+                            <td><a href="tel:+1-893-896-2442">+1 (893) 896-2442</a></td>
+                        </tr>
+                        <tr>
+                            <td>Anayeli Brynhild</td>
+                            <td><a href="tel:+1-700-658-3096">+1 (700) 658-3096</a></td>
+                        </tr>
+                        <tr>
+                            <td>Józefina Madhukar</td>
+                            <td><a href="tel:+1-897-778-5344">+1 (897) 778-5344</a></td>
+                        </tr>
+                    </table>
+                    </div>
 
-				<div id="addContact" class="tab">
-					<p>Need a way to add contacts.</p>
-					<p></p>
-				</div>
+                    <div id="addContact" class="tab">
+                        <form role="form">
+                            <div>
+                                <label for="name">Name</label>
+                                <input id="name" aria-live="assertive" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label for="phone_number">Phone Number</label>
+                                <input id="phone_number" aria-live="assertive" placeholder="123-456-7890">
+                            </div>
+                        </form>
+                        <button>Add Contact</button>
+                        <button id="button_clear" aria-controls="number">Clear</button>
+                    </div>
 
-				<div id="help" class="tab">
-					<p>Need a way to help.</p>
-					<p></p>
-				</div>
+                    <div id="help" class="tab">
+                        <div>
+                            
+                        </div>
+                        <div class="header" role="banner">
+                            <img src="accessibility.jpg" alt="Accessibility" title="Accessibility" longdesc="longdesc_accessibility.html" height="60" width="60">
+                            <h1>Accessibility Guide</h1>
+                        </div>
+                        
+                        <div>
+                            <table id="accessibility_table">
+                                <tr>
+                                    <th>Key Command</th>
+                                    <th>Focused Tab</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td>Cmd-Alt 1</td>
+                                    <td>All</td>
+                                    <td>Switch to Dialer Tab</td>
+                                </tr>
+                                <tr>
+                                    <td>Cmd-Alt 2</td>
+                                    <td>All</td>
+                                    <td>Switch to Contacts Tab</td>
+                                </tr>
+                                <tr>
+                                    <td>Cmd-Alt 3</td>
+                                    <td>All</td>
+                                    <td>Switch to Add Contacts Tab</td>
+                                </tr>
+                                <tr>
+                                    <td>Cmd-Alt 4</td>
+                                    <td>All</td>
+                                    <td>Switch to Help Tab</td>
+                                </tr>
+                                <tr>
+                                    <td>NumStrip / NumPad</td>
+                                    <td>Dialer</td>
+                                    <td>Enter Numbers</td>
+                                </tr>
+                                <tr>
+                                    <td>Backspace / Del</td>
+                                    <td>Dialer</td>
+                                    <td>Delete numbers</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>
+                            <a href=https://www.freepik.com/free-icon/accessibility-signal_695195.htm>Image Citation</a>
+                        </p>
+                    </div>
 
-			</div>
-		</div>
-	</body>
+                </div>
+            </div>
+        </body>
+    </main>
 </html>
 

@@ -147,11 +147,16 @@ $(document).ready(function() {
 	});
 
 	
-    if ($('.tabContent #dialer[class="tab active"]').length > 0){
-	    $.notify("User the number keys/pad to dial.", "info");
-    };
+    // if ($('.tabContent #dialer[class="tab active"]').length > 0){
+	   //  $.notify("User the number keys/pad to dial.", "info");
+    // };
 
-    $.notify("Use Ctl-Alt [1,2,3,4] to switch between tabs.", "info");
+    $.notify("Use Ctl-Alt [1,2,3,4] to switch between tabs.", 
+            {
+            	className: "info",
+            	globalPosition: 'top left',
+         		
+         	});
     
 });
 
